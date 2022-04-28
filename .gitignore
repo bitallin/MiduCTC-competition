@@ -1,0 +1,10 @@
+nogit
+data/*
+__pycache__
+model/*
+pretrained_model/*
+logs/*
+!.gitkeep
+!data/example_input.json
+!data/example_output.json
+!data/example.txt
