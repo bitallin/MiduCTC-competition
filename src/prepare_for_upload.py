@@ -22,7 +22,7 @@ def prepare_for_uploadfile(in_model_dir,
 
 if __name__ == '__main__':
     prepare_for_uploadfile(
-        in_model_dir='model/ctc_train_2022Y04M27D16H/epoch4,step1,testf1_25_3%,devf1_23_53%',
-        in_json_file='data/preliminary_data/preliminary_test_source.json',
-        out_json_file='data/preliminary_test_inference.json'
+        in_model_dir='model/model/ctc_train_2022Y04M27D16H/epoch2,step11,testf1_46_37%,devf1_26_66%',
+        in_json_file='data/preliminary_data/preliminary_b_test_source.json',
+        out_json_file='data/preliminary_b_test_inference.json'
                            )
