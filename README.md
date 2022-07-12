@@ -2,6 +2,12 @@
 
 文本智能校对大赛baseline
 
+## Baseline
+
+- 提供Baseline模型
+- 参考[GECToR – Grammatical Error Correction: Tag, Not Rewrite](https://aclanthology.org/2020.bea-1.16.pdf)
+- [gector-github](https://github.com/grammarly/gector)
+
 ## 代码结构
 ```
 ├── command
