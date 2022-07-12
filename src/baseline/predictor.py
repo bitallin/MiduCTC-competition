@@ -107,13 +107,7 @@ class PredictorCtc:
                 continue
             elif '$REPLACE' in pred_token:
                 pred_text += pred_token.split('_')[-1]
-            elif '$INSERT' in pred_token:
+            elif '$APPEND' in pred_token:
                 pred_text += src_token+pred_token.split('_')[-1]
 
         return pred_text
-
-
-if __name__ == '__main__':
-    p = PredictorCtc('model/ctc_2022Y04M27D03H/epoch11,step1,testf1_100_0%,devf1_100_0%')
-    r = p.predict('今天的天气真错！', return_topk=3)
-    print(r)
