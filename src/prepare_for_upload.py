@@ -15,14 +15,3 @@ def prepare_for_uploadfile(in_model_dir,
     
     out_json_file = open(out_json_file, 'w', encoding='utf-8')
     json.dump(output_json_data, out_json_file, ensure_ascii=False, indent=4)
-    
-
-
-
-
-if __name__ == '__main__':
-    prepare_for_uploadfile(
-        in_model_dir='model/model/ctc_train_2022Y04M27D16H/epoch2,step11,testf1_46_37%,devf1_26_66%',
-        in_json_file='data/preliminary_data/preliminary_b_test_source.json',
-        out_json_file='data/preliminary_b_test_inference.json'
-                           )

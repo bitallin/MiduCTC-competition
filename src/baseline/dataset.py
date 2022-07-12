@@ -161,13 +161,3 @@ class DatasetCTC(Dataset):
         inputs['d_tags'] = d_tags
         inputs['c_tags'] = c_tags
         return inputs
-
-
-if __name__ == '__main__':
-
-    d = DatasetCTC(in_model_dir='pretrained_model/chinese-roberta-wwm-ext',
-                   src_texts=['可老爸还是无动于束'],
-                   trg_texts=['可老爸还是无动于衷'])
-    dataset = torch.utils.data.dataloader.DataLoader(d, batch_size=1)
-    for i in dataset:
-        print(i)

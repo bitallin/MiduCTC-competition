@@ -22,12 +22,3 @@ def evaluate(in_model_dir,json_data_file, log_fp='logs/f1_score.log'):
                               log_fp=log_fp)
     
     return f1_score
-
-
-if __name__ == '__main__':
-    
-    evaluate(
-        in_model_dir='model/ctc_train_2022Y04M27D16H/epoch4,step1,testf1_45_3%,devf1_23_53%',
-        json_data_file='data/preliminary_data/preliminary_val.json', 
-                           )
-    
