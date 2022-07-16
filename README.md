@@ -31,9 +31,9 @@
 
 本次赛题选择网络文本作为输入，从中检测并纠正错误，实现中文文本校对系统。即给定一段文本，校对系统从中检测出错误字词、错误类型，并进行纠正，最终输出校正后的结果。
 
-文本校对又称文本纠错，相关资料可参考自然语言处理方向的**语法纠错（Grammatical Error Correction, GEC)** 任务和**中文拼写纠错（Chinese spelling check, CSC）**和 [一些开放资料](#相关资源)
+文本校对又称文本纠错，相关资料可参考自然语言处理方向的**语法纠错(Grammatical Error Correction, GEC)**任务和**中文拼写纠错(Chinese spelling check, CSC)**
 
-
+[赛题相关资源](#相关资源)
 
 ## Baseline介绍
 
@@ -62,7 +62,7 @@
 
 ### 使用说明
 
-- 数据集获取：请于比赛官网报名获取数据集
+- 数据集获取：请于[比赛网站](https://aistudio.baidu.com/aistudio/competition/detail/404/0/introduction)获取数据集
 - 提供了基础校对系统的baseline，其中baseline模型训练参数说明参考src/baseline/trainer.py
 - baseline中的预训练模型支持使用bert类模型，可从HuggingFace下载bert类预训练模型，如: [chinese-roberta-wwm-ext](https://huggingface.co/hfl/chinese-roberta-wwm-ext)等
 - baseline仅作参考，参赛队伍可对baseline进行二次开发，或采取其他解决方案。
