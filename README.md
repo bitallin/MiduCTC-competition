@@ -31,7 +31,7 @@
 
 本次赛题选择网络文本作为输入，从中检测并纠正错误，实现中文文本校对系统。即给定一段文本，校对系统从中检测出错误字词、错误类型，并进行纠正，最终输出校正后的结果。
 
-文本校对又称文本纠错，相关资料可参考自然语言处理方向的**语法纠错（Grammatical Error Correction, GEC)** 任务和**中文拼写纠错（Chinese spelling check, CSC）**和[一些开放资料](#相关资源)
+文本校对又称文本纠错，相关资料可参考自然语言处理方向的**语法纠错（Grammatical Error Correction, GEC)** 任务和**中文拼写纠错（Chinese spelling check, CSC）**和 [一些开放资料](#相关资源)
 
 
 
