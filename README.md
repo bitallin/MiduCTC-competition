@@ -33,7 +33,6 @@
 
 文本校对又称文本纠错，相关资料可参考自然语言处理方向的**语法纠错(Grammatical Error Correction, GEC)**任务和**中文拼写纠错(Chinese spelling check, CSC)**
 
-[赛题相关资源](#相关资源)
 
 ## Baseline介绍
 
