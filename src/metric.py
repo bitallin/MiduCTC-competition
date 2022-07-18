@@ -134,8 +134,8 @@ def ctc_comp_f1_token_level(src_texts, pred_texts, trg_texts):
             elif tag == 'delete':
                 for count, src_i in enumerate(range(src_i1, src_i2)):
                     trg_token = ''
-                    detect_ref_list.append(src_i1)
-                    correct_ref_list.append((src_i1, trg_token))
+                    detect_ref_list.append(src_i)
+                    correct_ref_list.append((src_i, trg_token))
 
             elif tag == 'insert':
                 trg_token = trg_text[trg_i1:trg_i2]
@@ -221,10 +221,3 @@ def final_f1_score(src_texts,
     logger.info('final f1:{}'.format(final_f1))
     logger.info('f1 logfile saved at:{}'.format(log_fp))
     return final_f1
-
-
-if __name__ == '__main__':
-    s = final_f1_score(src_texts=['你号钟国', '我知道知道这件情了！'], 
-                       pred_texts=['你好中国', '我知道知道这件事情了！'], 
-                       trg_texts= ['你好中国', '我知道这件事情了！'])
-    print(s)
