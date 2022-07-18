@@ -132,10 +132,9 @@ def ctc_comp_f1_token_level(src_texts, pred_texts, trg_texts):
                     correct_ref_list.append((src_i, trg_token))
 
             elif tag == 'delete':
-                for count, src_i in enumerate(range(src_i1, src_i2)):
-                    trg_token = ''
-                    detect_ref_list.append(src_i)
-                    correct_ref_list.append((src_i, trg_token))
+                trg_token = 'D'*(src_i2-src_i1)
+                detect_ref_list.append(src_i1)
+                correct_ref_list.append((src_i1, trg_token))
 
             elif tag == 'insert':
                 trg_token = trg_text[trg_i1:trg_i2]
