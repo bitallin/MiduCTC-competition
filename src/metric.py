@@ -157,13 +157,25 @@ def ctc_comp_f1_token_level(src_texts, pred_texts, trg_texts):
 
         detect_ref_num += len(detect_ref_list)
         detect_pred_num += len(detect_pred_list)
-        detect_recall_num += len(set(detect_ref_list)
-                                 & set(detect_pred_list))
+        for item in detect_pred_list:
+            try:
+                match_id = detect_ref_list.index(item)
+                detect_recall_num += 1
+                del detect_ref_list[match_id]
+            except:
+                continue
 
         correct_ref_num += len(correct_ref_list)
         correct_pred_num += len(correct_pred_list)
-        correct_recall_num += len(set(correct_ref_list)
-                                  & set(correct_pred_list))
+        detect_recall_num += len([i for i in detect_pred_list if i in detect_ref_list])
+        correct_recall_num += 
+        for item in correct_pred_list:
+            try:
+                match_id = correct_ref_list.index(item)
+                correct_recall_num += 1
+                del correct_ref_list[match_id]
+            except:
+                continue
 
     assert correct_ref_num > 0, '文本中未发现错误，无法计算指标，该指标只计算含有错误的样本。'
 
