@@ -18,7 +18,7 @@
 
 | 时间 | 事件 |
 | ------- | ------- |
-| 2022.7.19 | 修复指标计算的Bug, 详见[metry.py](https://github.com/bitallin/MiduCTC-competition/blob/main/src/metric.py) ,感谢[@张同学的提醒和贡献](https://github.com/HillZhang1999)|
+| 2022.7.19 | 修复指标计算的Bug, 详见[metry.py](https://github.com/bitallin/MiduCTC-competition/blob/main/src/metric.py) ,感谢[@张同学](https://github.com/HillZhang1999)的提醒和贡献|
 
 ## 赛程
 
