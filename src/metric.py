@@ -167,7 +167,6 @@ def ctc_comp_f1_token_level(src_texts, pred_texts, trg_texts):
 
         correct_ref_num += len(correct_ref_list)
         correct_pred_num += len(correct_pred_list)
-        correct_recall_num += 
         for item in correct_pred_list:
             try:
                 match_id = correct_ref_list.index(item)
