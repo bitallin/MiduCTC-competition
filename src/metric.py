@@ -200,7 +200,7 @@ def final_f1_score(src_texts,
     
     token_level_f1, detect_metrics, correct_metrcis = ctc_comp_f1_token_level(
         src_texts, pred_texts, trg_texts)
-    sent_level_f1, sent_level_p, sent_level_r = ctc_comp_f1_sentence_level(
+    sent_level_p, sent_level_r, sent_level_f1 = ctc_comp_f1_sentence_level(
         src_texts, pred_texts, trg_texts)
     final_f1 = round(0.8*token_level_f1 + sent_level_f1*0.2, 4)
 
