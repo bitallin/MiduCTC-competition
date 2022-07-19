@@ -8,3 +8,4 @@ logs/*
 !data/example_input.json
 !data/example_output.json
 !data/example.txt
+utils
