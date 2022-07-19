@@ -126,6 +126,7 @@ def ctc_comp_f1_token_level(src_texts, pred_texts, trg_texts):
         for (tag, src_i1, src_i2, trg_i1, trg_i2) in diffs:
 
             if tag == 'replace':
+                assert src_i2 - src_i1 == trg_i2 - trg_i1
                 for count, src_i in enumerate(range(src_i1, src_i2)):
                     trg_token = trg_text[trg_i1+count]
                     detect_ref_list.append(src_i)
@@ -149,8 +150,13 @@ def ctc_comp_f1_token_level(src_texts, pred_texts, trg_texts):
 
     for src_text, pred_text, trg_text in zip(src_texts, pred_texts, trg_texts):
         # 先统计检测和纠正标签
-        detect_pred_list, correct_pred_list = compute_detect_correct_label_list(
-            src_text, pred_text)
+        try:
+            # 处理bad case
+            detect_pred_list, correct_pred_list = compute_detect_correct_label_list(
+                src_text, pred_text)
+        except Exception as e:
+            logger.exception(e)
+            detect_pred_list, correct_pred_list = [], []
         detect_ref_list, correct_ref_list = compute_detect_correct_label_list(
             src_text, trg_text)
 
