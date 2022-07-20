@@ -151,14 +151,19 @@ def ctc_comp_f1_token_level(src_texts, pred_texts, trg_texts):
     for src_text, pred_text, trg_text in zip(src_texts, pred_texts, trg_texts):
         # 先统计检测和纠正标签
         try:
+            detect_ref_list, correct_ref_list = compute_detect_correct_label_list(
+                src_text, trg_text)
+        except Exception as e:
+            # 可能Eval dataset有个别错误，暂时跳过
+            continue
+        try:
             # 处理bad case
             detect_pred_list, correct_pred_list = compute_detect_correct_label_list(
                 src_text, pred_text)
         except Exception as e:
             logger.exception(e)
             detect_pred_list, correct_pred_list = [], []
-        detect_ref_list, correct_ref_list = compute_detect_correct_label_list(
-            src_text, trg_text)
+        
 
         detect_ref_num += len(detect_ref_list)
         detect_pred_num += len(detect_pred_list)
