@@ -76,7 +76,7 @@
 
 ### baseline表现
 
-- baseline在a榜训练集（不含preliminary_extend_train.json）的情况下
+- baseline在a榜训练集（不含preliminary_extend_train.json）,使用单机4卡分布式训练的情况下
 - 训练到**第4个epoch**结束在a榜提交得分约为：**0.3587**
 
 具体训练参数如下:
