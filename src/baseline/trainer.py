@@ -208,8 +208,8 @@ class TrainerCtc:
         self.check_val_every_n_steps = ceil(
             self.check_val_every_n_epoch * self._train_steps)  # 每多少个step进行验证
         
-        if self.check_val_every_n_steps < 10:
-            self.check_val_every_n_steps = 10
+        # if self.check_val_every_n_steps < 10:
+        #     self.check_val_every_n_steps = 10
 
         logger.info('_train_size:{}'.format(self._train_size))
         logger.info('_dev_size:{}'.format(self._dev_size))
