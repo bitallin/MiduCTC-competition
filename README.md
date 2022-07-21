@@ -96,7 +96,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m src.train \
 --early_stop_times "20" \
 --warmup_steps "-1" \
 --dev_data_ratio "0.01" \
---training_mode "normal" \
+--training_mode "ddp" \
 --amp true \
 --freeze_embedding false
 ```
