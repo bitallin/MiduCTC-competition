@@ -76,7 +76,8 @@
 
 ### baseline表现
 
-baseline在a榜训练集（不含preliminary_extend_train.json）的情况下，训练到**第4个epoch**结束在a榜提交得分约为：**0.3587**
+- baseline在a榜训练集（不含preliminary_extend_train.json）的情况下
+- 训练到**第4个epoch**结束在a榜提交得分约为：**0.3587**
 
 具体训练参数如下:
 
@@ -100,7 +101,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m src.train \
 --freeze_embedding false
 ```
 
-其中所用的预训练为:[chinese-roberta-wwm-ext](https://huggingface.co/hfl/chinese-roberta-wwm-ext), 若使用Macbert可能会有进一步的提升
+- 其中所用的预训练为:[chinese-roberta-wwm-ext](https://huggingface.co/hfl/chinese-roberta-wwm-ext)
+- 若使用Macbert可能会有进一步的提升
 
 
 ### 开始训练
