@@ -9,6 +9,7 @@
     - [模型](#模型)
     - [代码结构](#代码结构)
     - [使用说明](#使用说明)
+    - [baseline表现](#baseline表现)
     - [开始训练](#开始训练)
   - [其他公开数据集](#其他公开数据集)
   - [相关资源](#相关资源)
@@ -19,6 +20,7 @@
 | 时间 | 事件 |
 | ------- | ------- |
 | 2022.7.19 | 修复指标计算的Bug, 详见[metry.py](https://github.com/bitallin/MiduCTC-competition/blob/main/src/metric.py) ,感谢[@HillZhang1999](https://github.com/HillZhang1999)的提醒和贡献|
+| 2022.7.21 | 更新baseline在a榜数据集上的表现|
 
 ## 赛程
 
@@ -71,6 +73,35 @@
 - 提供了基础校对系统的baseline，其中baseline模型训练参数说明参考src/baseline/trainer.py
 - baseline中的预训练模型支持使用bert类模型，可从HuggingFace下载bert类预训练模型，如: [chinese-roberta-wwm-ext](https://huggingface.co/hfl/chinese-roberta-wwm-ext)等
 - baseline仅作参考，参赛队伍可对baseline进行二次开发，或采取其他解决方案。
+
+### baseline表现
+
+baseline在a榜训练集（不含preliminary_extend_train.json）的情况下，训练到**第4个epoch**结束在a榜提交得分约为：**0.3587**
+
+具体训练参数如下:
+
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m src.train \
+--in_model_dir "pretrained_model/chinese-roberta-wwm-ext" \
+--out_model_dir "model/ctc_train" \
+--epochs "50" \
+--batch_size "158" \
+--max_seq_len "128" \
+--learning_rate "5e-5" \
+--train_fp "data/comp_data/preliminary_a_data/preliminary_train.json" \
+--test_fp "data/comp_data/preliminary_a_data/preliminary_val.json" \
+--random_seed_num "42" \
+--check_val_every_n_epoch "0.5" \
+--early_stop_times "20" \
+--warmup_steps "-1" \
+--dev_data_ratio "0.01" \
+--training_mode "normal" \
+--amp true \
+--freeze_embedding false
+```
+
+其中所用的预训练为:[chinese-roberta-wwm-ext](https://huggingface.co/hfl/chinese-roberta-wwm-ext), 若使用Macbert可能会有进一步的提升
+
 
 ### 开始训练
 
